@@ -28,20 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            this.txtDistancia = new System.Windows.Forms.TextBox();
             this.lblDias = new System.Windows.Forms.Label();
             this.lblDistancia = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.numUpDown = new System.Windows.Forms.NumericUpDown();
             this.mrcCosto = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDown)).BeginInit();
+            this.mrcCosto.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox2
+            // txtDistancia
             // 
-            this.textBox2.Location = new System.Drawing.Point(276, 132);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(120, 22);
-            this.textBox2.TabIndex = 1;
+            this.txtDistancia.Location = new System.Drawing.Point(276, 132);
+            this.txtDistancia.Name = "txtDistancia";
+            this.txtDistancia.Size = new System.Drawing.Size(120, 22);
+            this.txtDistancia.TabIndex = 1;
+            this.txtDistancia.TextChanged += new System.EventHandler(this.txtDistancia_TextChanged);
             // 
             // lblDias
             // 
@@ -61,46 +68,110 @@
             this.lblDistancia.TabIndex = 4;
             this.lblDistancia.Text = "Distancia";
             // 
-            // numericUpDown1
+            // numUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(276, 42);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
-            this.numericUpDown1.TabIndex = 5;
+            this.numUpDown.Location = new System.Drawing.Point(276, 55);
+            this.numUpDown.Maximum = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            this.numUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numUpDown.Name = "numUpDown";
+            this.numUpDown.Size = new System.Drawing.Size(120, 22);
+            this.numUpDown.TabIndex = 5;
+            this.numUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // mrcCosto
             // 
+            this.mrcCosto.Controls.Add(this.txtTotal);
+            this.mrcCosto.Controls.Add(this.txtPrecio);
+            this.mrcCosto.Controls.Add(this.label2);
+            this.mrcCosto.Controls.Add(this.lblPrecio);
             this.mrcCosto.Location = new System.Drawing.Point(114, 224);
             this.mrcCosto.Name = "mrcCosto";
-            this.mrcCosto.Size = new System.Drawing.Size(399, 141);
+            this.mrcCosto.Size = new System.Drawing.Size(304, 141);
             this.mrcCosto.TabIndex = 6;
             this.mrcCosto.TabStop = false;
             this.mrcCosto.Text = "costo";
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Location = new System.Drawing.Point(162, 90);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(120, 22);
+            this.txtTotal.TabIndex = 3;
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Enabled = false;
+            this.txtPrecio.Location = new System.Drawing.Point(162, 28);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(120, 22);
+            this.txtPrecio.TabIndex = 2;
+            this.txtPrecio.Text = "5$";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(68, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 16);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Total";
+            // 
+            // lblPrecio
+            // 
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Location = new System.Drawing.Point(38, 31);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(68, 16);
+            this.lblPrecio.TabIndex = 0;
+            this.lblPrecio.Text = "Precio Km";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 450);
+            this.ClientSize = new System.Drawing.Size(493, 450);
             this.Controls.Add(this.mrcCosto);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.numUpDown);
             this.Controls.Add(this.lblDistancia);
             this.Controls.Add(this.lblDias);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtDistancia);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmMain_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numUpDown)).EndInit();
+            this.mrcCosto.ResumeLayout(false);
+            this.mrcCosto.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDistancia;
         private System.Windows.Forms.Label lblDias;
         private System.Windows.Forms.Label lblDistancia;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown numUpDown;
         private System.Windows.Forms.GroupBox mrcCosto;
+        private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblPrecio;
     }
 }
 
